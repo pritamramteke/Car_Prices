@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictive Analysis</title>
+</head>
+
+<body>
+<div class="container">
+
+    <div style="color:white">
+
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Predictive Analysis of Car Price</h1>
+            <br>
+
+            <h3>What's the Car symboling(-2 to 3)?</h3>
+            <input class="fourth" name="symboling" required="required">
+
+            <h3>What's the normalized_losses(60 to 270)?</h3>
+            <input class="fourth" name="normalized_losses" required="required">
+
+            <h3>What Is the Fuel type?</h3>
+            <br>
+            <select name="Fuel_type" class="fuel" required="required">
+                <option value="gas">Gas</option>
+                <option value="diesel">Diesel</option>
+            </select>
+
+            <h3>What is make?</h3>
+            <br>
+            <select name="make" class="fuel" required="required">
+                <option value="std">Standard</option>
+                <option value="turbo">Turbo</option>
+            </select>
+
+            <h3>How Many Doors it have?</h3>
+            <br>
+            <select name="num_of_doors" class="fuel" required="required">
+                <option value="four">Four</option>
+                <option value="two">Two</option>
+            </select>
+
+            <h3>What is Aspiration of Car?</h3>
+            <br>
+            <select name="aspiration" class="fuel" required="required">
+                <option value="sedan">Sedan</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="wagon">Wagon</option>
+                <option value="hardtop">Hardtop</option>
+                <option value="convertible">Convertible</option>
+            </select>
+
+            <h3>What is Wheel_base of Car?</h3>
+            <br>
+            <select name="wheel_base" class="fuel" required="required">
+                <option value="fwd">fwd</option>
+                <option value="rwd">rwd</option>
+                <option value="4wd">4wd</option>
+            </select>
+
+            <h3>Where is Engine_location of Car?</h3>
+            <br>
+            <select name="engine_location" class="fuel" required="required">
+                <option value="front">front</option>
+                <option value="rear">rear</option>
+            </select>
+
+            <h3>What's is drive_wheels(80 to 121)?</h3>
+            <input class="fourth" name="drive_wheels" required="required">
+
+            <h3>Where is Body_Style of Car?</h3>
+            <br>
+            <select name="body_style" class="fuel" required="required">
+                <option value="toyota">toyota</option>
+                <option value="nissan">nissan</option>
+                <option value="mazda">mazda</option>
+                <option value="mitsubishi">mitsubishi</option>
+                <option value="honda">honda</option>
+                <option value="subaru">subaru</option>
+                <option value="volkswagen">volkswagen</option>
+                <option value="volvo">volvo</option>
+                <option value="peugot">peugot</option>
+                <option value="dodge">dodge</option>
+                <option value="bmw">bmw</option>
+                <option value="mercedes-benz">mercedes-benz</option>
+                <option value="plymouth">plymouth</option>
+                <option value="audi">audi</option>
+                <option value="saab">saab</option>
+                <option value="porsche">porsche</option>
+                <option value="isuzu">isuzu</option>
+                <option value="chevrolet">chevrolet</option>
+                <option value="alfa-romero">alfa-romero</option>
+                <option value="jaguar">jaguar</option>
+                <option value="renault">renault</option>
+                <option value="mercury">mercury</option>
+            </select>
+
+            <h3>What's is length of car(140 to 210)?</h3>
+            <input class="fourth" name="length" required="required">
+
+            <h3>What's is width of car(60 to 73)?</h3>
+            <input class="fourth" name="width" required="required">
+
+            <h3>What's is height of car(47 to 60)?</h3>
+            <input class="fourth" name="height" required="required">
+
+            <h3>What's is curb_weight of car(1480 to 4070)?</h3>
+            <input class="fourth" name="curb_weight" required="required">
+
+            <h3>What is is Engine_Type of Car?</h3>
+            <br>
+            <select name="engine_type" class="fuel" required="required">
+                <option value="ohc">ohc</option>
+                <option value="ohcf">ohcf</option>
+                <option value="ohcv">ohcv</option>
+                <option value="dohc">dohc</option>
+                <option value="l">l</option>
+                <option value="rotor">rotor</option>
+                <option value="dohcv">dohcv</option>
+            </select>
+
+            <h3>How many Numbers of Cyliders Car have(2 to 12)?</h3>
+            <input class="fourth" name="num_of_cylinders" required="required">
+
+            <h3>What's is engine_size of car(60 to 326)?</h3>
+            <input class="fourth" name="engine_size" required="required">
+
+            <h3>Which Fuel System Car have?</h3>
+            <br>
+            <select name="fuel_system" class="fuel" required="required">
+                <option value="mpfi">mpfi</option>
+                <option value="2bbl">2bbl</option>
+                <option value="idi">idi</option>
+                <option value="1bbl">1bbl</option>
+                <option value="spdi">spdi</option>
+                <option value="4bbl">4bbl</option>
+                <option value="spfi">spfi</option>
+                <option value="mfi">mfi</option>
+            </select>
+
+            <h3>What's is bore of car( 2.54 to 3.62)?</h3>
+            <input class="fourth" name="bore" required="required">
+
+            <h3>What's is stroke of car( 2.07 to 3.4)?</h3>
+            <input class="fourth" name="stroke" required="required">
+
+            <h3>What's is compression_ratio of car(7 to 23)?</h3>
+            <input class="fourth" name="compression_ratio" required="required">
+
+            <h3>What's is horsepower of car(40 to 208)?</h3>
+            <input class="fourth" name="horsepower" required="required">
+
+            <h3>What's is peak_rpm of car(4150 to 6600)?</h3>
+            <input class="fourth" name="peak_rpm" required="required">
+
+            <h3>What's is city_mpg of car(13 to 49)?</h3>
+            <input class="fourth" name="city_mpg" required="required">
+
+            <h3>What's is highway_mpg of car(16 to 54)?</h3>
+            <input class="fourth" name="highway_mpg" required="required">
+
+
+
+
+
+            <br><br><button class="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}</h3>
+    </div>
+</div>
+
+
+
+    <style>
+        body {
+            background: lightgreen;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        .research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        .container{
+        border-radius: 60px;
+            border-color: red;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: darkslategrey;
+            width: 700px;
+            padding: 10px;
+              margin: auto;
+        }
+        .box {
+            border-radius: 60px;
+            border-color: red;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        .fuel {
+            width: 123px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        .fuel:hover {
+            background-color: coral;
+        }
+        
+        .research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        .research:hover {
+            background-color: coral;
+        }
+        
+        .resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        .resea:hover {
+            background-color: coral;
+        }
+        
+        .sub {
+            width: 220px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            border-style:solid;
+            font-size: 18px;
+            color:white;
+            background-color:red;
+
+        }
+        
+        .sub:hover {
+            background-color: darkcyan;
+        }
+        
+        .first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        .fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+
+</html>
